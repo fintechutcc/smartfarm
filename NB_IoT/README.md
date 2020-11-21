@@ -1,0 +1,58 @@
+# ตัวอย่างโค้ดสำหรับ AIS NB IoT และ Magellan IoT Platform
+
+## ขั้นตอนที่ 1 ติดตั้ง ESP32
+- คลิกที่เมนู File > Preferences
+
+![Preferences01](images/01_ESP32.jpeg)
+
+- ที่แท็บ Settings ในช่อง Additional Boards Manager URLs ตรวจสอบว่ามีค่าเป็น https://dl.espressif.com/dl/package_esp32_index.json
+
+![Preferences02](images/02_ESP32.jpeg)
+
+- คลิกที่เมนู Tools > Board: ... > Boards Manager ดังรูปด้านล่าง
+
+![Preferences03](images/03_ESP32.jpeg)
+
+- พิมพ์ esp32 ลงในกล่องข้อความดังรูปต่อไปนี้
+
+![Preferences04](images/04_ESP32.jpeg)
+
+- เมื่อติดตั้งเสร็จ เปลี่ยนบอร์ดเป็น ESP32 Dev Model ดังรูปต่อไปนี้
+
+![Preferences05](images/05_ESP32.jpeg)
+
+## ขั้นตอนที่ 2 ติดตั้งไลบรารี Magellan_SIM7020E
+
+- ดาวน์โหลด Magellan_SIM7020E จากลิงค์ต่อไปนี้ https://github.com/AIS-DeviceInnovation/Magellan_SIM7020E แล้วบันทึกไว้ในโฟลเดอร์ Downloads
+
+- ใน Arduino IDE คลิกที่เมนู Sketch > Include Library > Add .ZIP Library ... ดังรูปต่อไปนี้
+
+![Magellan01](images/06_Magellan.jpeg)
+
+- โปรแกรมถามหาไฟล์ Magellan_SIM7020E.zip ให้เลือกดังรูป แล้วคลิก Open
+
+![Magellan02](images/07_Magellan.jpeg)
+
+- คลิกที่เมนู Sketch > Include Library > Manage Libraries ...
+
+![Magellan03](images/08_Magellan.jpeg)
+
+- พิมพ์ข้อความ Magellan_SIM7020 แล้วคลิก Install ดังรูปต่อไปนี้
+
+![Magellan04](images/09_Magellan.jpeg)
+
+## ขั้นตอนที่ 3 ติดตั้งไลบรารี HDC1080
+
+- คลิกที่เมนู Sketch > Include Library > Manage Libraries ...
+
+![Magellan03](images/08_Magellan.jpeg)
+
+- พิมพ์ข้อความ ClosedCube HDC1080 แล้วคลิก Install ดังรูปต่อไปนี้
+
+![HDC01](images/10_HDC.jpeg)
+
+## ขั้นตอนที่ 4 ทดลองโปรแกรม nb_iot.ino 
+
+- ดาวน์โหลดโค้ดต่อไปนี้ เปิดด้วย Arduino IDE แล้วคลิกอัพโหลดขึ้นยังบอร์ด NB IoT พร้อมเปิด Serial Monitor
+
+![SerialMonitor](images/11_Serial_Monitor.png)
