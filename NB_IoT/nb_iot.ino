@@ -21,7 +21,7 @@ void setup()
   Serial.print("Device ID=0x");
   Serial.println(hdc1080.readDeviceId(), HEX);
 
-  // เริ่มต้นใช้งาน Magellan
+  // เริ่มต้นใช้งาน Magellan IoT Platform
   Serial.println("Initialize Magellan IoT API.");
   magel.begin();
   Serial.println("Initialization done!");    

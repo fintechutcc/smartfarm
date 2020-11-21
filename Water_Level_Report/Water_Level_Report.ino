@@ -8,7 +8,7 @@
 #define MQTT_USERNAME ""
 #define MQTT_PASSWORD ""
 #define MQTT_NAME     ""
-#define WIFI_STA_NAME "UTCC_IOT_2G1"
+#define WIFI_STA_NAME "UTCC_IOT_2G"
 #define WIFI_STA_PASS ""
 
 #define SQL1 "insert into water_level values (null,"

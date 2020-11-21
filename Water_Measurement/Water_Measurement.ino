@@ -6,7 +6,7 @@
 #define SCL_PIN 5
 
 const char* ssid     = "UTCC_CPE_LAB";
-const char* password = "iyd9kmujl6f";
+const char* password = "Password";
 
 VL53L0X sensor;
 WiFiServer server(80);

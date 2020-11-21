@@ -82,8 +82,32 @@
 - ป้อนข้อมูลต่อไปนี้
 1. Thing Name เช่น NB_ แล้วตามด้วยชื่อ
 2. ป้อนค่า ICCID และ IMEI โดยใช้ค่าที่ได้จาก Serial Monitor ในขั้นตอนที่ 4
-3. เปลี่ยน Refresh Time จาก None เป็น Refresh ป้อนตัวเลขเป็น 5 แล้วคลิก Register Thing
+3. เปลี่ยน Refresh Time จาก None เป็น Refresh ป้อนตัวเลขเป็น 5 แล้วคลิก Register Thing เพื่อลงทะเบียนอุปกรณ์ NB IoT
 
 ![IoT06](images/17_IoT.png)
 
+- ผลลัพธ์ของการลงทะเบียนเป็นดังนี้
 
+![IoT07](images/18_IoT.png)
+
+## ขั้นตอนที่ 6 การสร้าง Dashboard
+
+- คลิกที่ Dashboards > + Create Dashboard แล้วตั้งชื่อ Dashboard Name เช่น ห้องของฉัน ดังรูป
+
+![IoT08](images/19_IoT.png)
+
+- คลิกที่ Create Widget แล้วเลือก Temperature จากนั้นคลิก Next
+
+![IoT09](images/20_IoT.png)
+
+- ตั้งชื่อของ Widget ในช่อง Name เป็น "อุณหภูมิ" ส่วน Thing Name ให้เลือกชื่ออุปกรณ์ที่ลงทะเบียนไว้ เช่น NB_Suparerk และเลือกชนิดของเซ็นเซอร์ ในกรณีนี้เลือก temperature แล้วคลิก Next
+
+![IoT10](images/20_IoT.png)
+
+- คลิก Create Widget
+
+![IoT11](images/22_IoT.png)
+
+- โปรดทดลองสร้าง Widget อื่นๆ เพิ่มเติม เช่น ดังรูปต่อไปนี้
+
+![IoT12](images/23_IoT.png)
