@@ -53,6 +53,37 @@
 
 ## ขั้นตอนที่ 4 ทดลองโปรแกรม nb_iot.ino 
 
-- ดาวน์โหลดโค้ดต่อไปนี้ เปิดด้วย Arduino IDE แล้วคลิกอัพโหลดขึ้นยังบอร์ด NB IoT พร้อมเปิด Serial Monitor
+- ดาวน์โหลดโค้ดต่อไปนี้ เปิดด้วย Arduino IDE แล้วคลิกอัพโหลดขึ้นยังบอร์ด NB IoT พร้อมเปิด Serial Monitor ผลลัพธ์ที่ได้เป็นดังนี้
 
 ![SerialMonitor](images/11_Serial_Monitor.png)
+
+## ขั้นตอนที่ 5 ลงทะเบียน Magellan IoT Plantform
+
+- เปิดเว็บ https://magellan.ais.co.th/users/signin แล้วคลิกที่ CONTINUE WITH FACEBOOK ดังรูปต่อไปนี้
+
+![IoT01](images/12_IoT.png)
+
+- ในรูปต่อไปนี้ คลิกที่ "ดำเนินการต่อในชื่อ ..." 
+
+![IoT02](images/13_IoT.png)
+
+- ที่รูปด้านล่าง คลิกที่  Trial Magellan Free 30 Days
+
+![IoT03](images/14_IoT.png)
+
+- ติ๊กถูกที่ I agree terms and conditions แล้วคลิก Accept
+
+![IoT04](images/15_IoT.png)
+
+- คลิกที่ + Register Thing
+
+![IoT05](images/16_IoT.png)
+
+- ป้อนข้อมูลต่อไปนี้
+1. Thing Name เช่น NB_ แล้วตามด้วยชื่อ
+2. ป้อนค่า ICCID และ IMEI โดยใช้ค่าที่ได้จาก Serial Monitor ในขั้นตอนที่ 4
+3. เปลี่ยน Refresh Time จาก None เป็น Refresh ป้อนตัวเลขเป็น 5 แล้วคลิก Register Thing
+
+![IoT06](images/17_IoT.png)
+
+
