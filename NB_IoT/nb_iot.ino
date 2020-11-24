@@ -8,6 +8,12 @@ ClosedCube_HDC1080 hdc1080;
 const int lightSensorPin=34; 
 String payload;
 
+// ขาต่อเพื่อขับรีเลย์ควบคุมปั๊ม
+const int pumpPin = 13;
+const int ledPin = 2;
+String pumpState;
+String sw;
+
 void setup() 
 {
   Serial.begin(115200);
@@ -24,25 +30,52 @@ void setup()
   // เริ่มต้นใช้งาน Magellan IoT Platform
   Serial.println("Initialize Magellan IoT API.");
   magel.begin();
-  Serial.println("Initialization done!");    
+  Serial.println("Initialization done!");
+
+  // กำหนดขาที่ใช้ควบคุมรีเลย์เปิด-ปิดปั๊ม
+  pinMode(pumpPin, OUTPUT);
+  pinMode(ledPin, OUTPUT);
 }
 
 void loop() 
 {
+  // อ่านสถานะของสวิตช์ควบคุมปั๊มจาก Magellan IoT Platform
+  pumpState = magel.getControl("pump");
+  Serial.println("Pump State:" + pumpState);
+  if(pumpState.indexOf("40300") == -1) {
+    sw = pumpState;
+  }
+
+  // ถ้าสวิตช์มีสถานะเป็น 1 เปิดปั๊มและให้ LED ติด
+  if(sw == "1") {
+    digitalWrite(ledPin, 1);
+    digitalWrite(pumpPin, 1);
+  } else {
+    digitalWrite(ledPin, 0);
+    digitalWrite(pumpPin, 0);
+  }
+
   // อ่านค่าอุณหภูมิ แปลงเป็นข้อความ
-  String temperature=String(hdc1080.readTemperature());
+  String temperature = String(hdc1080.readTemperature());
 
   // อ่านค่าความชื้น แปลงเป็นข้อความ
-  String humidity=String(hdc1080.readHumidity());
+  String humidity = String(hdc1080.readHumidity());
 
   // อ่านค่าแสงสว่าง แปลงเป็นข้อความ
-  String Light=String(analogRead(lightSensorPin));
+  String light = String(analogRead(lightSensorPin));
+
+  // อ่านค่าระยะทาง แปลงเป็นข้อความ
+  // String distance = String();
 
   /* นำอุณหภูมิ (temperature), ความชื้น (humidity), และแสงสว่าง (Light)
    * มาเรียงเป็นสตริง payload ให้อยู่ในรูปแบบ JSON เช่น
    * {"temperature":34.63, "humidity":42.5, "light":85}
    */
-  payload="{\"temperature\":"+temperature+",\"humidity\":"+humidity+",\"light\":"+Light+"}";  
+  payload = "{\"temperature\":" + temperature
+          + ",\"humidity\":" + humidity
+          + ",\"light\":" + light
+          + ",\"distance\":" + distance
+          + "}";  
   
   // ส่งสตริง payload ไปบันทึกยัง Magellan IoT Platform
   magel.report(payload);
