@@ -67,9 +67,9 @@ void loop()
   // อ่านค่าระยะทาง แปลงเป็นข้อความ
   // String distance = String();
 
-  /* นำอุณหภูมิ (temperature), ความชื้น (humidity), และแสงสว่าง (Light)
+  /* นำอุณหภูมิ (temperature), ความชื้น (humidity), แสงสว่าง (light) และระยะทาง (distance)
    * มาเรียงเป็นสตริง payload ให้อยู่ในรูปแบบ JSON เช่น
-   * {"temperature":34.63, "humidity":42.5, "light":85}
+   * {"temperature":34.63, "humidity":42.5, "light":85, "distance":25}
    */
   payload = "{\"temperature\":" + temperature
           + ",\"humidity\":" + humidity
