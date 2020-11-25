@@ -46,7 +46,8 @@ void loop()
     sw = pumpState;
   }
 
-  // ถ้าสวิตช์มีสถานะเป็น 1 เปิดปั๊มและให้ LED ติด
+  // ถ้าสวิตช์มีสถานะเป็น 1 เปิด LED และเปิดปั๊ม
+  // มิฉะนั้น ปิด LED และปิดปั๊ม
   if(sw == "1") {
     digitalWrite(ledPin, 1);
     digitalWrite(pumpPin, 1);
@@ -65,7 +66,7 @@ void loop()
   String light = String(analogRead(lightSensorPin));
 
   // อ่านค่าระยะทาง แปลงเป็นข้อความ
-  // String distance = String();
+  String distance = "25"; // <--- เปลี่ยนโค้ดบรรทัดนี้ให้อ่านค่าจากเซ็นเซอร์
 
   /* นำอุณหภูมิ (temperature), ความชื้น (humidity), แสงสว่าง (light) และระยะทาง (distance)
    * มาเรียงเป็นสตริง payload ให้อยู่ในรูปแบบ JSON เช่น
