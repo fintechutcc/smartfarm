@@ -1,5 +1,9 @@
 # ตัวอย่างโค้ดสำหรับ AIS NB IoT และ Magellan IoT Platform
 
+ตำแหน่งขา (Pins) ต่างๆ ของ NB IoT:
+
+![Preferences00](images/24_IoT.png)
+
 ## ขั้นตอนที่ 1 ติดตั้ง ESP32
 - คลิกที่เมนู File > Preferences
 
