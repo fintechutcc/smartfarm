@@ -4,12 +4,13 @@
 Magellan_SIM7020E magel;          
 ClosedCube_HDC1080 hdc1080;
 
-// เซ็นเซอร์แสงต่อที่ขา 24
+// เซ็นเซอร์แสงต่อที่ขา 34
 const int lightSensorPin=34; 
 String payload;
 
-// ขาต่อเพื่อขับรีเลย์ควบคุมปั๊ม
-const int pumpPin = 13;
+// ขาต่อเพื่อขับรีเลย์ควบคุมปั๊มที่ขา 33
+// LED บนบอร์ดอยู่ที่ขา 2
+const int pumpPin = 33;
 const int ledPin = 2;
 String pumpState;
 String sw;
@@ -66,7 +67,7 @@ void loop()
   String light = String(analogRead(lightSensorPin));
 
   // อ่านค่าระยะทาง แปลงเป็นข้อความ
-  String distance = "25"; // <--- เปลี่ยนโค้ดบรรทัดนี้ให้อ่านค่าจากเซ็นเซอร์
+  String distance = String(100); // <--- เปลี่ยนโค้ดบรรทัดนี้ให้อ่านค่าจากเซ็นเซอร์
 
   /* นำอุณหภูมิ (temperature), ความชื้น (humidity), แสงสว่าง (light) และระยะทาง (distance)
    * มาเรียงเป็นสตริง payload ให้อยู่ในรูปแบบ JSON เช่น
